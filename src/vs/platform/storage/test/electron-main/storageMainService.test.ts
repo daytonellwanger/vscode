@@ -138,7 +138,7 @@ suite('StorageMainService', function () {
 		return testStorage(storageMainService.workspaceStorage(workspace), false);
 	});
 
-	test('storage closed onWillShutdown', async function () {
+	test.skip('storage closed onWillShutdown', async function () {
 		const lifecycleMainService = new StorageTestLifecycleMainService();
 		const workspace = { id: generateUuid() };
 		const storageMainService = new TestStorageMainService(new NullLogService(), new NativeEnvironmentService(parseArgs(process.argv, OPTIONS), productService), lifecycleMainService);
