@@ -128,7 +128,7 @@ export abstract class SharedDesktopMain extends Disposable {
 	private registerListeners(workbench: Workbench, storageService: NativeStorageService): void {
 
 		// Workbench Lifecycle
-		this._register(workbench.onWillShutdown(event => event.join(storageService.close(), 'join.closeStorage')));
+		//this._register(workbench.onWillShutdown(event => event.join(storageService.close(), 'join.closeStorage')));
 		this._register(workbench.onShutdown(() => this.dispose()));
 	}
 
