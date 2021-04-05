@@ -66,7 +66,7 @@ export class StorageMainService extends Disposable implements IStorageMainServic
 		}));
 
 		// All Storage: Close when shutting down
-		this._register(this.lifecycleMainService.onWillShutdown(e => {
+		/*this._register(this.lifecycleMainService.onWillShutdown(e => {
 
 			// Global Storage
 			e.join(this.globalStorage.close());
@@ -75,7 +75,7 @@ export class StorageMainService extends Disposable implements IStorageMainServic
 			for (const [, storage] of this.mapWorkspaceToStorage) {
 				e.join(storage.close());
 			}
-		}));
+		}));*/
 	}
 
 	//#region Global Storage
