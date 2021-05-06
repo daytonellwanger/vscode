@@ -28,7 +28,8 @@
 		"ms-vscode.github-browser",
 		"ms-vscode.github-richnav",
 		"ms-vscode.remotehub",
-		"ms-vscode.remotehub-insiders"
+		"ms-vscode.remotehub-insiders",
+		"ms-vsliveshare.vsliveshare"
 	],
 	"builtInExtensions": [
 		{

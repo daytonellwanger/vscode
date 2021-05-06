@@ -116,6 +116,7 @@ class EditorEditTask extends ModelEditTask {
 	override apply(): void {
 		if (this._edits.length > 0) {
 			this._edits = this._edits.sort((a, b) => Range.compareRangesUsingStarts(a.range, b.range));
+			console.log(`EditorEditTask.apply '${this._edits[0].text}' to ${(this._editor as any)._modelData?.viewModel?._cursor?._model?._commandManager?._model?.uri?.path}`);
 			this._editor.executeEdits('', this._edits);
 		}
 		if (this._newEol !== undefined) {
@@ -179,6 +180,7 @@ export class BulkTextEdits {
 				let task: ModelEditTask;
 				let makeMinimal = false;
 				if (this._editor?.getModel()?.uri.toString() === ref.object.textEditorModel.uri.toString()) {
+					console.log(`Creating EditorEditTask to apply '${value[0].textEdit.text}' to ${(this._editor as any)._modelData?.viewModel?._cursor?._model?._commandManager?._model?.uri?.path}`);
 					task = new EditorEditTask(ref, this._editor);
 					makeMinimal = true;
 				} else {

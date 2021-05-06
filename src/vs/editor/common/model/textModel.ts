@@ -1416,6 +1416,7 @@ export class TextModel extends Disposable implements model.ITextModel {
 
 	private _doApplyEdits(rawOperations: model.ValidAnnotatedEditOperation[], computeUndoEdits: boolean): void | model.IValidEditOperation[] {
 
+		console.log(`TextModel._doApplyEdits '${rawOperations[0].text}' to ${this.uri.path}`);
 		const oldLineCount = this._buffer.getLineCount();
 		const result = this._buffer.applyEdits(rawOperations, this._options.trimAutoWhitespace, computeUndoEdits);
 		const newLineCount = this._buffer.getLineCount();
